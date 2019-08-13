@@ -12,7 +12,7 @@ void setup()
   size(300, 300);
   
   println("Bluetooth Car Control");
-  println("wasd for movement, space to stop");
+  println("Arrow keys for movement");
   
   // port = new Serial(this, "/dev/cu.HC-06-DevB", 9600);
   port = new Serial(this, "/dev/cu.usbmodem1452301", 9600);
@@ -53,20 +53,20 @@ void draw()
     port.write('3');
   }
   
-  if (down_pressed)
+  if (down_pressed && left_pressed)
   {
-    println("Driving backwards");
-    port.write('s');
+    println("Backwards + left");
+    port.write('4');
   }
-  if (left_pressed)
+  else if (down_pressed && right_pressed)
   {
-    println("Turning left");
-    port.write('a');
+    println("Backwards + right");
+    port.write('5');
   }
-  if (right_pressed)
+  else if (down_pressed)
   {
-    println("Turning right");
-    port.write('d');
+    println("Backwards");
+    port.write('6');
   }
   
   else
