@@ -215,30 +215,42 @@ void control()
     if (input == '1')
     {
       Serial.println("Forwards + left");
-      drive(1, 255);
+      drive(1, 50);
       turn(0, 255);
     }
-    if (input == 's')
+    // Forwards + right
+    else if (input == '2')
     {
-      Serial.println("Driving backward");
-      drive(0, 75);
-    }
-    if (input == 'd')
-    {
-      analogWrite(enA, 255);  // Turn drive to maximum
-      Serial.println("Turning right");
+      Serial.println("Forwards + right");
+      drive(1, 50);
       turn(1, 255);
     }
-    if (input == 'a')
+    // Forwards
+    else if (input == '3')
     {
-      analogWrite(enA, 255);  // Turn drive to maximum
-      Serial.println("Turning left");
+      Serial.println("Forwards");
+      drive(1, 75);
+    }
+    
+    // Backwards + left
+    if (input == '4')
+    {
+      Serial.println("Backwards + left");
+      drive(0, 255);
       turn(0, 255);
     }
-    if (input == ' ')
+    // Backwards + right
+    if (input == '5')
     {
-      Serial.println("Stopping");
-      stop();
+      Serial.println("Backwards + right");
+      drive(0, 255);
+      turn(1, 255);
+    }
+    // Backwards
+    if (input == '6')
+    {
+      Serial.println("Backwards");
+      drive(0, 75);
     }
   }
 }
