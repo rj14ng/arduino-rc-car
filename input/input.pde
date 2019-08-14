@@ -2,6 +2,10 @@ import processing.serial.*;
 
 Serial port;
 
+// EDIT PORT NAME HERE
+String port_name = "/dev/cu.HC-05-DevB";
+// String port_name = "/dev/cu.usbmodem1452301";
+
 boolean up_pressed = false;
 boolean down_pressed = false;
 boolean left_pressed = false;
@@ -14,9 +18,7 @@ void setup()
   println("Bluetooth Car Control");
   println("Arrow keys for movement");
   
-  port = new Serial(this, "/dev/cu.HC-05-DevB", 9600);
-  // port = new Serial(this, "/dev/cu.HC-05-DevB-1", 9600);
-  // port = new Serial(this, "/dev/cu.usbmodem1452301", 9600);
+  port = new Serial(this, port_name, 9600);
 }
 
 void keyPressed()
@@ -37,7 +39,6 @@ void keyReleased()
 
 void draw()
 {
-  // NEED TO COMBINE FORWARD/LEFT, FORWARD/RIGHT, BACKWARD/LEFT, BACKWARD/RIGHT, ETC.
   if (up_pressed && left_pressed)
   {
     println("Forwards + left");
