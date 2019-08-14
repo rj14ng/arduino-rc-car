@@ -14,8 +14,9 @@ void setup()
   println("Bluetooth Car Control");
   println("Arrow keys for movement");
   
-  // port = new Serial(this, "/dev/cu.HC-06-DevB", 9600);
-  port = new Serial(this, "/dev/cu.usbmodem1452301", 9600);
+  port = new Serial(this, "/dev/cu.HC-05-DevB", 9600);
+  // port = new Serial(this, "/dev/cu.HC-05-DevB-1", 9600);
+  // port = new Serial(this, "/dev/cu.usbmodem1452301", 9600);
 }
 
 void keyPressed()
