@@ -1,8 +1,8 @@
 // Motor A (drive)
 
-int enA = 9;
-int in1 = 8;
-int in2 = 7;
+int enA = 11;
+int in1 = 12;
+int in2 = 13;
 
 // Motor B (steering)
 
