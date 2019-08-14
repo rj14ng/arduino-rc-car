@@ -48,7 +48,7 @@ void drive(int dir, int spd)
 
 void turn(int dir, int spd)
 {
-  // Direction: 1 (right), 0 (left)
+  // Direction: 1 (left), 0 (right)
   // Speed: ranges from 0~255 (recommended max 255)
 
   // Turn on motor B (steering)
@@ -83,21 +83,21 @@ void control()
     if (input == '1')
     {
       Serial.println("Forwards + left");
-      drive(1, 50);
-      turn(0, 255);
+      drive(1, 255);
+      turn(1, 255);
     }
     // Forwards + right
     else if (input == '2')
     {
       Serial.println("Forwards + right");
-      drive(1, 50);
-      turn(1, 255);
+      drive(1, 255);
+      turn(0, 255);
     }
     // Forwards
     else if (input == '3')
     {
       Serial.println("Forwards");
-      drive(1, 75);
+      drive(1, 255);
     }
     
     // Backwards + left
@@ -105,20 +105,20 @@ void control()
     {
       Serial.println("Backwards + left");
       drive(0, 255);
-      turn(0, 255);
+      turn(1, 255);
     }
     // Backwards + right
     if (input == '5')
     {
       Serial.println("Backwards + right");
       drive(0, 255);
-      turn(1, 255);
+      turn(0, 255);
     }
     // Backwards
     if (input == '6')
     {
       Serial.println("Backwards");
-      drive(0, 75);
+      drive(0, 255);
     }
   }
 }
