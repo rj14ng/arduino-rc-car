@@ -15,7 +15,7 @@ A project by Fabian Yiu and Rocco Jiang.
    ```
 5. Load the Processing sketch in `input/input.pde`, replacing the `port_name` string with the port name found earlier.
 6. Turn on the 3xAA battery pack.
-7. Run the sketch and wait for 'CLEAR' to appear in the Processing console, signifying that a connection has been made to the serial port. Use arrow keys to control the car.
+7. Run the sketch and wait for 'CLEAR' to appear in the Processing console, signifying that a connection has been made to the serial port. Use arrow keys or wasd to control the car.
 
 ## Schematic
 ![Schematic](schematic/schematic_img.png)
