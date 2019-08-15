@@ -3,7 +3,7 @@ import processing.serial.*;
 Serial port;
 
 // EDIT PORT NAME HERE
-String port_name = "/dev/cu.HC-05-DevB";
+String port_name = "/dev/cu.HC-05-DevB-1";
 // String port_name = "/dev/cu.usbmodem1452301";
 
 boolean up_pressed = false;
@@ -16,25 +16,25 @@ void setup()
   size(300, 300);
   
   println("Bluetooth Car Control");
-  println("Arrow keys for movement");
+  println("Arrow keys or wasd for movement");
   
   port = new Serial(this, port_name, 9600);
 }
 
 void keyPressed()
 {
-  if (keyCode == UP) up_pressed = true;
-  else if (keyCode == DOWN) down_pressed = true;
-  else if (keyCode == LEFT) left_pressed = true;
-  else if (keyCode == RIGHT) right_pressed = true;
+  if ((keyCode == UP) || (key == 'w')) up_pressed = true;
+  else if ((keyCode == DOWN) || (key == 's')) down_pressed = true;
+  else if ((keyCode == LEFT) || (key == 'a')) left_pressed = true;
+  else if ((keyCode == RIGHT) || (key == 'd')) right_pressed = true;
 }
 
 void keyReleased()
 {
-  if (keyCode == UP) up_pressed = false;
-  else if (keyCode == DOWN) down_pressed = false;
-  else if (keyCode == LEFT) left_pressed = false;
-  else if (keyCode == RIGHT) right_pressed = false;
+  if ((keyCode == UP) || (key == 'w')) up_pressed = false;
+  else if ((keyCode == DOWN) || (key == 's')) down_pressed = false;
+  else if ((keyCode == LEFT) || (key == 'a')) left_pressed = false;
+  else if ((keyCode == RIGHT) || (key == 'd')) right_pressed = false;
 }
 
 void draw()
