@@ -3,8 +3,7 @@ import processing.serial.*;
 Serial port;
 
 // EDIT PORT NAME HERE
-String port_name = "/dev/cu.HC-05-DevB-1";
-// String port_name = "/dev/cu.usbmodem1452301";
+String port_name = "/dev/cu.HC-05-DevB";
 
 boolean up_pressed = false;
 boolean down_pressed = false;
